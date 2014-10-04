@@ -1,0 +1,16 @@
+<div class="bet">
+<h2>Welcome to Blackjack <%= session[:player_name] %>!</h2>
+
+<% money = session[:money] %>
+<% if money = nil
+  session[:money] = 500 %>
+<% end %>
+<h3>You have $<%=  session[:money] %></h3>
+<form action='/bet' method='post'>
+  Bet: <input type='text' name="bet" class="input"/>
+  <br/>
+  <input type='submit' value="Bet" id="bet_button"/>
+</form>
+  <img src='/images/stephzerofour.jpg' alt=https://flic.kr/p/4B1mHB, cropped, photo by Steph, CC BY-SA 2.0>
+<p>Photo by Steph, CC BY-SA 2.0</p>
+</div>

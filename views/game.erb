@@ -1,0 +1,45 @@
+<div class="main">
+<br>
+<div class="total">  
+  <%= session[:player_name] %>'s Total:
+  <%=session[:player_total]%>
+<div>
+<br>
+<img src='/images/player.png' class="avatar">
+  
+  <% session[:player_cards].each do |card| %>
+    <%= image(card) %>
+  <% end %>
+
+<br>  
+<div class="total"> 
+  <% if session[:turn] == "dealer" %>
+    Dealer's Total:
+    <%=session[:dealer_total]%>
+  <% end %> 
+</div>
+<br>
+<img src='/images/dealer.png'  class="avatar">
+  
+  <% session[:dealer_cards].each_with_index do |card, i| %>
+    <% if session[:turn] != "dealer" && i == 0 %>
+      <img src="/images/cards/cover.jpg" class="face">
+    <% else %>
+      <%= image(card) %>
+    <% end %>
+  <% end %>
+
+  <% if @buttons %>
+    <% if @hit %>
+      <form action='/game/hit' method='post'>
+        <input type='submit' class="button" id="hit" value='Hit'/>
+      </form>
+    <% end %>
+      <form action='/game/stand' method='post'>
+        <input type='submit' class="button" id="stand" value='Stand'/>
+      </form>
+  <% end %>
+  
+<br>Money: $<%= session[:money] %>
+<br>Bet: $<%= session[:bet] %>
+</div>  

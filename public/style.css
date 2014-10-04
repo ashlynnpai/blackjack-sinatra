@@ -1,0 +1,155 @@
+body {
+  background: #99C68E;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main {
+  background: #99C68E;
+  max-width: 990px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+img.face{
+  max-width: 130px;
+  margin: 10px;
+}
+
+.button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: #FFEBCD;
+}
+
+.button:hover {
+  background-color: #FF7267;
+}
+
+#hit {
+  float: left;
+  border: 15px solid #42BEC2;
+  color: #42BEC2;
+  font-size: 24px;
+}
+
+#stand {
+  border: 15px solid #C24641;
+  color: #C24641;
+  font-size: 24px;
+}
+
+nav {
+  padding: 10px 0;
+  text-align: center;   
+  background-color: #9E71A9;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;    
+}
+    
+nav li {
+  display: inline-block;  
+}
+
+nav a {
+  font-family: 'Playball', cursive;
+  color: #EAFFDF;
+  padding: 15px 30px;   
+  text-decoration: none;
+  font-size: 24px;
+}        
+
+nav a.selected, nav a:hover, a:hover {
+  color: #A4D199;   
+}
+
+.avatar {
+  margin-right: 50px;
+}
+
+.total {
+  font-size: 22px;
+}
+
+#title {
+  font-size: 24px;
+}
+
+.message {
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+  font-family: 'Playball', cursive;
+}
+
+#message3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.choose_name {
+  text-align: center; 
+  padding: 20px 0;
+  background:  #ADDFFF;
+  margin-bottom: 0;
+}
+
+
+#name_button {
+  margin: 20px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  color: #7B1212;
+  background-color: #FEA8A8;
+  font-size: 30px;
+}
+
+#name_button:hover {
+  background-color: #53A953;
+}
+
+.input {
+  height: 20px; 
+  border: solid #7B1212 2px;
+  border-radius: 5px;
+}
+
+.input:hover {
+  background-color: #B2E0B2;
+}
+
+.bet {
+  color: #EAFFDF;
+  text-align: center;
+  padding: 100px 0;
+  background: #7d7e7d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+#bet_button {
+  font-size: 14px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: #FFEBCD;
+  border: 15px solid #C24641;
+  color: #C24641;
+}
+
+#bet_button:hover {
+    background-color: #FF7267;
+}
