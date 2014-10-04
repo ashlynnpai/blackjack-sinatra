@@ -1,7 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/reloader'
-require 'pry'
 
 use Rack::Session::Cookie, :key => 'rack.session',
                            :path => '/',
