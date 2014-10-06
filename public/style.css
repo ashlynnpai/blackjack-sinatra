@@ -96,19 +96,24 @@ nav a.selected, nav a:hover, a:hover {
 .choose_name {
   text-align: center; 
   padding: 20px 0;
-  background:  #ADDFFF;
+  background:  #000;
   margin-bottom: 0;
+}
+
+.choose_name p {
+  color: #fff;
+  margin-bottom: 50px;
 }
 
 
 #name_button {
-  margin: 20px;
-  height: 50px;
-  width: 200px;
+  margin: 20px 0;
+  height: 30px;
+  width: 100px;
   border-radius: 10px;
   color: #7B1212;
   background-color: #FEA8A8;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #name_button:hover {
@@ -140,7 +145,7 @@ nav a.selected, nav a:hover, a:hover {
 }
 
 #bet_button {
-  font-size: 14px;
+  font-size: 18px;
   border-radius: 50%;
   width: 100px;
   height: 100px;

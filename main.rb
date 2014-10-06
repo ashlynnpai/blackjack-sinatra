@@ -1,6 +1,11 @@
 require 'rubygems'
 require 'sinatra'
 
+if ENV['RACK_ENV'] != 'production'
+   require 'sinatra/reloader'
+   require 'pry'
+end
+
 use Rack::Session::Cookie, :key => 'rack.session',
                            :path => '/',
                            :secret => 'ejsresrt' 
@@ -146,7 +151,7 @@ post '/game/hit' do
     elsif total(session[:player_cards])==21
       @hit=false
     end
-  erb :game
+  erb :game, layout: false
 end
 
 post '/game/stand' do
@@ -163,7 +168,7 @@ post '/game/stand' do
     elsif total(session[:dealer_cards])>16
        game_over(session[:player_total], session[:dealer_total])
     end
-  erb :game
+  erb :game, layout: false
 end
 
 
