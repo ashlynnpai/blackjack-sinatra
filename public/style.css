@@ -96,7 +96,7 @@ nav a.selected, nav a:hover, a:hover {
 .choose_name {
   text-align: center; 
   padding: 20px 0;
-  background:  #000;
+  background:  #1E1E1E;
   margin-bottom: 0;
 }
 
@@ -124,6 +124,7 @@ nav a.selected, nav a:hover, a:hover {
   height: 20px; 
   border: solid #7B1212 2px;
   border-radius: 5px;
+  background-color: #FEA8A8;
 }
 
 .input:hover {

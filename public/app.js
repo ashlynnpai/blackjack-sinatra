@@ -36,23 +36,4 @@ function test(){
     });
 }
 
-/*
-function avatarOne(){
-  $(document).on("click", "#avatar1", function() {
-    $('.avatar-container').html('<img src="/images/avatar1.png" /> ');
-    });
-}
-
-function avatarTwo(){
-  $(document).on("click", "#avatar2", function() {
-    $('.avatar-container').html('<img src="/images/avatar2.png" /> ');
-    });
-}
-
-function avatarThree(){
-  $(document).on("click", "#avatar3", function() {
-    $('.avatar-container').html('<img src="/images/avatar3.png" /> ');
-    });
-}
-*/
 
