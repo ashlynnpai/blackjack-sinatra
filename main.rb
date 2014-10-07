@@ -11,6 +11,21 @@ use Rack::Session::Cookie, :key => 'rack.session',
                            :secret => 'ejsresrt' 
 
 helpers do
+  def avatar(num)
+    session[:chosen] = params[:chosen]
+    if num == 1
+      session[:chosen] = "<img src='/images/avatar1.png'>"
+    elsif num == 2
+      session[:chosen] = "<img src='/images/avatar2.png'>"
+    elsif num == 3
+      session[:chosen] = "<img src='/images/avatar3.png'>"
+    elsif num == 4
+      session[:chosen] = "<img src='/images/avatar4.png'>"
+    else
+      session[:chosen] = "<img src='/images/avatar5.png'>"
+    end
+  end
+  
   def image(card)
     "<img src='/images/cards/#{card[0]}_#{card[1]}.jpg' class='face'>"
   end
@@ -78,7 +93,8 @@ helpers do
     @message2 = "You #{outcome} $#{bet}.  You have $#{money} left."
     @message3 = "Change Bet: start a new game with a different bet<br>
 New Game: start a new game with the same bet<br>
-Change Player: start a new player"
+Change Player: start a new player and change your bet<br>
+Change Avatar: select a new avatar and change your bet"
   end
 end
 
@@ -101,6 +117,15 @@ end
 
 post '/set_name' do
   session[:player_name] = params[:player_name]
+  redirect '/avatar'
+end
+
+get '/avatar' do
+  erb :avatar
+end
+
+post '/avatar' do
+  session[:avatar] = params[:avatar]  
   redirect '/bet'
 end
 
@@ -113,14 +138,17 @@ post '/bet' do
   redirect '/game'
 end
 
-get '/game' do
- 
+get '/game' do 
   bet = session[:bet]
   bet = bet.to_i
   if bet<10 || bet>session[:money]
     redirect '/bet'
   end
   session[:turn] = session[:player_name]
+  
+    num = session[:avatar]
+    num = num.to_i 
+    avatar(num)
   
   suits = ['hearts', 'diamonds', 'spades', 'clubs']
   values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']

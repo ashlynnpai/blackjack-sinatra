@@ -15,6 +15,7 @@
       <li><a href="/game">New Game</a></li>
       <li id='title'>BLACKJACK</li>
       <li><a href="/set_name">Change Player</a></li>
+      <li><a href="/avatar">Change Avatar</a></li>
     </ul>
   </nav> 
 
@@ -22,18 +23,8 @@
     <%if @error %>
       <div><%=@error%></div>
     <% end %>
-    <%if @message1 %>
-      <div class="message"><%=@message1%></div>
-    <% end %>
-    <%if @message2 %>
-      <div class="message"><%=@message2%></div>
-    <% end %>
-     <%if @message3 %>
-      <div class="message" id="message3"><%=@message3%></div></footer> 
-    <% end %>
-   
   <%= yield %>
   </div>
   </body>
-  <footer>
+  
 </html>

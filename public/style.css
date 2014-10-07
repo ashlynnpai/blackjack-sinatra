@@ -69,7 +69,7 @@ nav a.selected, nav a:hover, a:hover {
   color: #A4D199;   
 }
 
-.avatar {
+.avatar-container {
   margin-right: 50px;
 }
 
@@ -106,7 +106,7 @@ nav a.selected, nav a:hover, a:hover {
 }
 
 
-#name_button {
+#name_button, #avatar_button {
   margin: 20px 0;
   height: 30px;
   width: 100px;
@@ -116,7 +116,7 @@ nav a.selected, nav a:hover, a:hover {
   font-size: 20px;
 }
 
-#name_button:hover {
+#name_button:hover, #avatar_button:hover {
   background-color: #53A953;
 }
 
@@ -156,5 +156,18 @@ nav a.selected, nav a:hover, a:hover {
 }
 
 #bet_button:hover {
-    background-color: #FF7267;
+  background-color: #FF7267;
+}
+
+.set-avatar {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.set-avatar p {
+  margin-top: 100px;
+}
+
+.avatar-line {
+  display: inline-block;
 }
