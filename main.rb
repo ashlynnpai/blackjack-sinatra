@@ -90,7 +90,11 @@ helpers do
         session[:money] -= bet 
       end
     money = session[:money]
-    @message2 = "You #{outcome} $#{bet}.  You have $#{money} left."
+      if outcome != "tie"
+        @message2 = "You #{outcome} $#{bet}.  You have $#{money} left."
+      else
+        @message2 = "You tie/push.  You have $#{money} left."
+      end
     @message3 = "Change Bet: start a new game with a different bet<br>
 New Game: start a new game with the same bet<br>
 Change Player: start a new player and change your bet<br>
@@ -139,6 +143,9 @@ post '/bet' do
 end
 
 get '/game' do 
+  if session[:money] <= 0
+    redirect '/set_name'
+  end
   bet = session[:bet]
   bet = bet.to_i
   if bet<10 || bet>session[:money]

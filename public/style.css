@@ -1,3 +1,5 @@
+/* Main */
+
 body {
   background: #99C68E;
   margin: 0;
@@ -16,30 +18,7 @@ img.face{
   margin: 10px;
 }
 
-.button {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  background-color: #FFEBCD;
-}
-
-.button:hover {
-  background-color: #FF7267;
-}
-
-#hit {
-  float: left;
-  border: 15px solid #42BEC2;
-  color: #42BEC2;
-  font-size: 24px;
-}
-
-#stand {
-  border: 15px solid #C24641;
-  color: #C24641;
-  font-size: 24px;
-}
+/* Nav */
 
 nav {
   padding: 10px 0;
@@ -69,6 +48,33 @@ nav a.selected, nav a:hover, a:hover {
   color: #A4D199;   
 }
 
+/* Game */
+
+.button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: #FFEBCD;
+}
+
+.button:hover {
+  background-color: #FF7267;
+}
+
+#hit {
+  float: left;
+  border: 15px solid #42BEC2;
+  color: #42BEC2;
+  font-size: 24px;
+}
+
+#stand {
+  border: 15px solid #C24641;
+  color: #C24641;
+  font-size: 24px;
+}
+
 .avatar-container {
   margin-right: 50px;
 }
@@ -93,6 +99,8 @@ nav a.selected, nav a:hover, a:hover {
   font-size: 16px;
 }
 
+/* Choose Name*/
+
 .choose_name {
   text-align: center; 
   padding: 20px 0;
@@ -104,7 +112,6 @@ nav a.selected, nav a:hover, a:hover {
   color: #fff;
   margin-bottom: 50px;
 }
-
 
 #name_button, #avatar_button {
   margin: 20px 0;
@@ -130,6 +137,8 @@ nav a.selected, nav a:hover, a:hover {
 .input:hover {
   background-color: #B2E0B2;
 }
+
+/* Bet */
 
 .bet {
   color: #EAFFDF;
@@ -160,6 +169,8 @@ nav a.selected, nav a:hover, a:hover {
   background-color: #FF7267;
 }
 
+/* Set Avatar */
+
 .set-avatar {
   text-align: center;
   margin-top: 50px;
@@ -171,4 +182,18 @@ nav a.selected, nav a:hover, a:hover {
 
 .avatar-line {
   display: inline-block;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  img.face{
+  max-width: 100px;
+  margin: 10px;
+}
+
+  nav a {
+  padding: 10px 20px;   
+  font-size: 18px;
+}        
 }
