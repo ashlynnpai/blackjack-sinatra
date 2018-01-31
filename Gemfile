@@ -1,6 +1,9 @@
 source "https://rubygems.org"
-ruby "1.9.3"
+ruby "2.5.0"
 
 gem 'sinatra'
 gem 'thin'
-gem 'pry'
+
+group :development, :test do
+  gem 'byebug'
+end
