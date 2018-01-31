@@ -22,30 +22,30 @@ img.face{
 
 nav {
   padding: 10px 0;
-  text-align: center;   
+  text-align: center;
   background-color: #9E71A9;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
-  list-style: none;    
+  list-style: none;
 }
-    
+
 nav li {
-  display: inline-block;  
+  display: inline-block;
 }
 
 nav a {
   font-family: 'Playball', cursive;
   color: #EAFFDF;
-  padding: 15px 30px;   
+  padding: 15px 30px;
   text-decoration: none;
   font-size: 24px;
-}        
+}
 
 nav a.selected, nav a:hover, a:hover {
-  color: #A4D199;   
+  color: #A4D199;
 }
 
 /* Game */
@@ -102,7 +102,7 @@ nav a.selected, nav a:hover, a:hover {
 /* Choose Name*/
 
 .choose_name {
-  text-align: center; 
+  text-align: center;
   padding: 20px 0;
   background:  #1E1E1E;
   margin-bottom: 0;
@@ -115,20 +115,21 @@ nav a.selected, nav a:hover, a:hover {
 
 #name_button, #avatar_button {
   margin: 20px 0;
-  height: 30px;
+  height: 40px;
   width: 100px;
   border-radius: 10px;
   color: #7B1212;
   background-color: #FEA8A8;
   font-size: 20px;
+  border: solid #7B1212 5px;
 }
 
 #name_button:hover, #avatar_button:hover {
-  background-color: #53A953;
+  background-color: #99C68E;
 }
 
 .input {
-  height: 20px; 
+  height: 20px;
   border: solid #7B1212 2px;
   border-radius: 5px;
   background-color: #FEA8A8;
@@ -193,7 +194,7 @@ nav a.selected, nav a:hover, a:hover {
 }
 
   nav a {
-  padding: 10px 20px;   
+  padding: 10px 20px;
   font-size: 18px;
-}        
+}
 }

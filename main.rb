@@ -3,12 +3,12 @@ require 'sinatra'
 
 if ENV['RACK_ENV'] != 'production'
    require 'sinatra/reloader'
-   require 'pry'
+   require 'byebug'
 end
 
 use Rack::Session::Cookie, :key => 'rack.session',
                            :path => '/',
-                           :secret => 'ejsresrt' 
+                           :secret => 'ejsresrt'
 
 helpers do
   def avatar(num)
@@ -25,11 +25,11 @@ helpers do
       session[:chosen] = "<img src='/images/avatar5.png'>"
     end
   end
-  
+
   def image(card)
     "<img src='/images/cards/#{card[0]}_#{card[1]}.jpg' class='face'>"
   end
-  
+
   def total(cards)
     arr = cards.map{|card| card[1] }
     total = 0
@@ -47,7 +47,7 @@ helpers do
     end
   total
   end
-  
+
   def game_over(player_total, dealer_total)
     @buttons = false
     x = session[:player_total] <=> session[:dealer_total]
@@ -65,8 +65,8 @@ helpers do
       total_money("lose")
     end
   erb :game
-  end  
-  
+  end
+
   def bust(total)
     if session[:player_total]>21
       @message1="Player busts!"
@@ -79,15 +79,15 @@ helpers do
     else return nil
     end
   erb :game
-  end  
+  end
 
   def total_money(outcome)
-    bet = session[:bet] 
+    bet = session[:bet]
     bet = bet.to_i
       if outcome == "win"
-        session[:money] += bet 
+        session[:money] += bet
       elsif outcome == "lose"
-        session[:money] -= bet 
+        session[:money] -= bet
       end
     money = session[:money]
       if outcome != "tie"
@@ -108,7 +108,7 @@ before do
 end
 
 get '/' do
-  if session[:player_name] 
+  if session[:player_name]
     redirect '/game'
   else
     erb :set_name
@@ -129,7 +129,7 @@ get '/avatar' do
 end
 
 post '/avatar' do
-  session[:avatar] = params[:avatar]  
+  session[:avatar] = params[:avatar]
   redirect '/bet'
 end
 
@@ -142,7 +142,7 @@ post '/bet' do
   redirect '/game'
 end
 
-get '/game' do 
+get '/game' do
   if session[:money] <= 0
     redirect '/set_name'
   end
@@ -152,11 +152,11 @@ get '/game' do
     redirect '/bet'
   end
   session[:turn] = session[:player_name]
-  
+
     num = session[:avatar]
-    num = num.to_i 
+    num = num.to_i
     avatar(num)
-  
+
   suits = ['hearts', 'diamonds', 'spades', 'clubs']
   values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
   session[:deck] = suits.product(values).shuffle!
@@ -167,10 +167,10 @@ get '/game' do
   session[:dealer_cards] << session[:deck].pop
   session[:player_cards] << session[:deck].pop
   session[:dealer_cards] << session[:deck].pop
-  
+
   session[:player_total] = total(session[:player_cards])
   session[:dealer_total] = total(session[:dealer_cards])
-  
+
   if session[:player_total] == 21 || session[:dealer_total] == 21
     game_over(session[:player_total], session[:dealer_total])
   end
@@ -193,7 +193,7 @@ post '/game/stand' do
   session[:turn] = "dealer"
   @buttons = false
   dealer_total = total(session[:dealer_cards])
- 
+
   while total(session[:dealer_cards])<17
     session[:dealer_cards] << session[:deck].pop
     session[:dealer_total] = total(session[:dealer_cards])
@@ -205,7 +205,3 @@ post '/game/stand' do
     end
   erb :game, layout: false
 end
-
-
-
-
