@@ -1,9 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    backports (3.11.1)
     byebug (10.0.0)
     daemons (1.2.6)
     eventmachine (1.2.5)
+    multi_json (1.13.1)
     mustermann (1.0.1)
     rack (2.0.4)
     rack-protection (2.0.0)
@@ -13,6 +15,15 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.0.0)
+      backports (>= 2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.0)
+      sinatra (= 2.0.0)
+      tilt (>= 1.3, < 3)
+    sinatra-reloader (1.0)
+      sinatra-contrib
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -25,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   sinatra
+  sinatra-reloader
   thin
 
 RUBY VERSION
